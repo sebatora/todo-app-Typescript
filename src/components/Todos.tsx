@@ -1,6 +1,16 @@
-const Todos = () => {
+import { type ListOfTodos } from "../types"
+
+interface Props {
+  todos: ListOfTodos
+}
+
+const Todos: React.FC<Props> = ({ todos }) => {
   return (
-    <div>Todos</div>
+    <ul>
+      {todos.map((todo) => (
+        <li key={todo.id}>{todo.title}</li>
+      ))}
+    </ul>
   )
 }
 
